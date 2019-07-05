@@ -1,0 +1,14 @@
+{
+  "name": "theme-bin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "gatsby-theme": "./cli.js"
+  },
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "inquirer": "^6.4.1"
+  }
+}
