@@ -8,6 +8,9 @@
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/plugin-syntax-jsx": "^7.2.0",
     "glob": "^7.1.4",
     "inquirer": "^6.4.1",
     "lodash": "^4.17.11"
