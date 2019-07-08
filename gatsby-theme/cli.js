@@ -3,14 +3,11 @@
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
-var mkdirp = require("mkdirp");
+const mkdirp = require("mkdirp");
+const { sortBy, uniq } = require("lodash");
+const loadThemes = require("gatsby/dist/bootstrap/load-themes");
 
 var inquirer = require("inquirer");
-
-const plugins = require(path.join(
-  process.cwd(),
-  "gatsby-config.js"
-), "utf-8").plugins.map(plugin => (plugin.resolve ? plugin.resolve : plugin));
 
 inquirer
   .prompt([
@@ -18,12 +15,25 @@ inquirer
       type: "list",
       name: "theme",
       message: "What theme are you trying to eject from?",
-      choices: plugins
+      choices: async () => {
+        const config = require(path.join(
+          process.cwd(),
+          "gatsby-config.js"
+        ), "utf-8");
+
+        const configWithThemes = await loadThemes(config, {
+          useLegacyThemes: false
+        });
+
+        return sortBy(
+          uniq(configWithThemes.config.plugins.map(({ resolve }) => resolve))
+        );
+      }
     },
     {
       type: "list",
       name: "component",
-      message: "Select the letter contained in your name:",
+      message: "Select the file you would like to shadow:",
       choices: ({ theme }) => {
         const themeSrc = path.join(path.dirname(require.resolve(theme)), `src`);
         return glob.sync(`**/*`, {

@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.4",
-    "inquirer": "^6.4.1"
+    "inquirer": "^6.4.1",
+    "lodash": "^4.17.11"
   }
 }
