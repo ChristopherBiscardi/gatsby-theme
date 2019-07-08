@@ -14,6 +14,6 @@
     "gatsby-theme-notes": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-bin": "1.0.0"
+    "gatsby-theme": "0.0.3"
   }
 }

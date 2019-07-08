@@ -5,5 +5,8 @@
   "private": true,
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT",
-  "workspaces": ["test-site", "theme-bin"]
+  "workspaces": [
+    "test-site",
+    "gatsby-theme"
+  ]
 }

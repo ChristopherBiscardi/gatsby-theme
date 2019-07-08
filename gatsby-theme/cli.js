@@ -52,7 +52,7 @@ inquirer
       fs.writeFileSync(
         finalPath,
         `import Component from '${theme}/src/${component}';
-        export default props => <Component {...props}/>`
+export default props => <Component {...props}/>`
       );
     }
   });
