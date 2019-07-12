@@ -48,4 +48,17 @@ inquirer
       )
     );
     fs.writeFileSync(path.join(pluginsThemePath, `index.js`), "// no-op");
+
+    console.log(`Success!
+
+Find your new child theme in '${pluginsThemePath}'
+
+Don't forget to
+
+1. add any dependencies to your project (such as parent themes)`);
+    themes.forEach((theme, i) => {
+      console.log(`   ${i}. ${theme}`);
+    });
+    console.log(`2. Add your new theme to your site's 'gatsby-config.js'
+    ${childThemeName}`);
   });
