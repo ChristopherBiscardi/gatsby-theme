@@ -4,12 +4,13 @@ const inquirer = require("inquirer");
 const npmKeyword = require("npm-keyword");
 const mkdirp = require("mkdirp");
 const path = require("path");
+const fs = require("fs");
 
 inquirer
   .prompt([
     {
-      type: "list",
-      name: "theme",
+      type: "checkbox",
+      name: "themes",
       message: "What parent theme are you trying to child theme?",
       choices: async () => {
         const possibleThemes = await npmKeyword.names("gatsby-theme");
@@ -22,13 +23,29 @@ inquirer
       message: "What would you like to call your child theme?"
     }
   ])
-  .then(({ theme, childThemeName }) => {
+  .then(({ themes, childThemeName }) => {
     const pluginsThemePath = path.join(
       process.cwd(),
       "plugins",
       childThemeName
     );
-    console.log(pluginsThemePath);
     mkdirp.sync(pluginsThemePath);
-    console.log(theme);
+    fs.writeFileSync(
+      path.join(pluginsThemePath, `gatsby-config.js`),
+      `module.exports = {
+        plugins: [${themes.map(theme => "`" + theme + "`")}]
+    }`
+    );
+    fs.writeFileSync(
+      path.join(pluginsThemePath, `package.json`),
+      JSON.stringify(
+        {
+          name: childThemeName,
+          version: "1.0.0"
+        },
+        null,
+        2
+      )
+    );
+    fs.writeFileSync(path.join(pluginsThemePath, `index.js`), "// no-op");
   });
