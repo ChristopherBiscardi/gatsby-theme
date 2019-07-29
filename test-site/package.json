@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "debug": "gatsby-theme debug"
   },
   "dependencies": {
     "gatsby": "^2.13.4",
@@ -14,6 +15,6 @@
     "gatsby-theme-notes": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "gatsby-theme": "0.0.3"
+    "gatsby-theme": "0.0.5"
   }
 }
