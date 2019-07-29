@@ -13,6 +13,7 @@
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "commander": "^2.20.0",
     "glob": "^7.1.4",
+    "globby": "^10.0.1",
     "inquirer": "^6.4.1",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
