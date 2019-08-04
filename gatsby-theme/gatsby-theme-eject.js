@@ -88,7 +88,8 @@ inquirer
     } else if (shadowType === "extend") {
       fs.writeFileSync(
         finalPath,
-        `import Component from '${theme}/src/${component}';
+        `import React from 'react';
+import Component from '${theme}/src/${component}';
 export default props => <Component {...props}/>`
       );
     }
