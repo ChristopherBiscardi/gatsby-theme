@@ -4,19 +4,17 @@ Gatsby theme is an experimental CLI to test UX improvements to the theme creatio
 
 [Warning: Experimental]
 
-## Install and use
+## Install
 
 ```shell
-# install
-yarn add gatsby-theme
-
-# usage
-yarn gatsby-theme eject
+yarn add gatsby-theme # or, npm i gatsby-theme
 ```
 
 ## Ejecting
 
-This CLI only has one command right now: `gatsby-theme eject`.
+```bash
+yarn gatsby-theme eject
+```
 
 Running this will offer up a menu of gatsby plugins and themes that you can choose to eject a file from. Ejecting the file copies it from its location inside `node_modules` to inside the right path in your project (e.g. `src/gatsby-theme-foobar/components/foo.js`) where it will shadow/override the component from the Gatsby theme.
 
@@ -29,6 +27,24 @@ Once you have selected a file, the CLI asks if you want to "copy" or "extend".
 Copying is the most common operation - this copies over all the code so that you can modify any part of it (and rewrites imports as explained above).
 
 Extending is a useful operation which still uses shadowing, but instead of copying over all the code, it just imports it so that you can write useful wrappers around it.
+
+## New
+
+```bash
+yarn gatsby-theme new
+```
+
+(TODO: Document this better) Searching with optional query
+
+## Debug
+
+```bash
+yarn gatsby-theme debug
+```
+
+(TODO: Document this better) Debug a project if you're having a themes issue
+
+---
 
 ## Creation Livestream
 
