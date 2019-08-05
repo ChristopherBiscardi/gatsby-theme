@@ -29,3 +29,10 @@ Once you have selected a file, the CLI asks if you want to "copy" or "extend".
 Copying is the most common operation - this copies over all the code so that you can modify any part of it (and rewrites imports as explained above).
 
 Extending is a useful operation which still uses shadowing, but instead of copying over all the code, it just imports it so that you can write useful wrappers around it.
+
+## Creation Livestream
+
+You can watch Chris Biscardi's livestreams making this CLI here:
+
+- [Gatsby Themes: Starting work on the CLI](https://www.youtube.com/watch?v=bGwvp1wWzAs)
+- [Gatsby Themes CLI Experiments: Automating new child theme creation](https://www.youtube.com/watch?v=HRpG_hyzPfo)
