@@ -26,7 +26,7 @@ Once you have selected a file, the CLI asks if you want to "copy" or "extend".
 
 Copying is the most common operation - this copies over all the code so that you can modify any part of it (and rewrites imports as explained above).
 
-Extending is a useful operation which still uses shadowing, but instead of copying over all the code, it just imports it so that you can write useful wrappers around it.
+Extending is an operation which uses shadowing, but instead of copying over all the code, it performs an import it so that you can wrap the component with additional functionality or styling.
 
 ## New
 
