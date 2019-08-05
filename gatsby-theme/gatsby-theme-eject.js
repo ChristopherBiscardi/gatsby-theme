@@ -41,7 +41,8 @@ inquirer
       choices: ({ theme }) => {
         const themeSrc = path.join(path.dirname(require.resolve(theme)), `src`);
         return glob.sync(`**/*`, {
-          cwd: themeSrc
+          cwd: themeSrc,
+          nodir: true
         });
       }
     },
